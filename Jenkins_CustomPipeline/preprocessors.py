@@ -221,8 +221,8 @@ class Pipeline:
         # train model
 
 
-        X_train = np.genfromtxt('X_train.csv', delimiter=',')
-        y_train = np.genfromtxt('y_train.csv', delimiter=',')
+        X_train = np.genfromtxt('Jenkins_CustomPipeline/X_train.csv', delimiter=',')
+        y_train = np.genfromtxt('Jenkins_CustomPipeline/y_train.csv', delimiter=',')
 
         self.model.fit(X_train, np.log(y_train))
 
@@ -276,7 +276,7 @@ class Pipeline:
         #data = self.transform(data)
         
         print("Loading Model")
-        _model = joblib.load(filename="Trained_Model")
+        _model = joblib.load(filename="Jenkins_CustomPipeline/Trained_Model")
 
         print("Making Predictions")
         predictions = _model.predict(data)
@@ -287,11 +287,11 @@ class Pipeline:
     
     def evaluate_model(self):
         '''evaluates trained model on train and test sets'''
-        X_train = np.genfromtxt('X_train.csv', delimiter=',')
-        y_train = np.genfromtxt('y_train.csv', delimiter=',')
+        X_train = np.genfromtxt('Jenkins_CustomPipeline/X_train.csv', delimiter=',')
+        y_train = np.genfromtxt('Jenkins_CustomPipeline/y_train.csv', delimiter=',')
 
-        X_test = np.genfromtxt('X_test.csv', delimiter=',')
-        y_test = np.genfromtxt('y_test.csv', delimiter=',')
+        X_test = np.genfromtxt('Jenkins_CustomPipeline/X_test.csv', delimiter=',')
+        y_test = np.genfromtxt('Jenkins_CustomPipeline/y_test.csv', delimiter=',')
 
         pred = self.model.predict(X_train)
         pred = np.exp(pred)
