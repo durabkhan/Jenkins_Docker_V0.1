@@ -13,7 +13,7 @@ if __name__ == '__main__':
     
     # load data set
     #data = pd.read_csv(config.PATH_TO_DATASET)
-    data = np.genfromtxt('X_test.csv', delimiter=',')
+    data = np.genfromtxt('Jenkins_CustomPipeline/X_test.csv', delimiter=',')
 
     #pipeline.ads(data)
     pipeline.train()
