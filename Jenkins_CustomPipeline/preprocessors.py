@@ -276,7 +276,7 @@ class Pipeline:
         #data = self.transform(data)
         
         print("Loading Model")
-        _model = joblib.load(filename="Jenkins_CustomPipeline/Trained_Model")
+        _model = joblib.load(filename="Trained_Model")
 
         print("Making Predictions")
         predictions = _model.predict(data)
